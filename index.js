@@ -2,12 +2,14 @@ import express  from "express"
 import mongoose from "mongoose";
 import Post from "./Post.js";
 import router from "./router.js";
+import fileUpload from 'express-fileupload'
 
 const PORT = 5000;
 const K_URL = `mongodb+srv://user:kuzya1704@cluster0.iql3l.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
 const app= express()
 
 app.use(express.json())
+app.use(fileUpload({}))
 app.use('/api', router)
 
 	
